@@ -595,3 +595,26 @@ void einkHandler_APP() {
 }
 
 #endif
+
+// ===================== v3 ADDITIONS =====================
+// Anime portrait bitmaps (52x58, 1-bit) — drawn procedurally
+// Battle cut-in system: shows portrait + action name before executing
+// CRYSTAL TECH: renamed special for touch slider
+// Character-specific magic: Arion=Flame/Heal, Kael=Cleave/Shield
+//
+// Portrait drawing is handled in drawBattle() with a cut-in overlay:
+// - White box overlays battle scene
+// - Character portrait (52x58) drawn left side
+// - Action name drawn in large font right side
+// - Speed lines decoration
+// - Auto-dismisses after ~500ms (timer-based)
+//
+// Audio tones (piezo buzzer frequencies):
+//   Menu select:  880Hz, 50ms square
+//   Confirm:      1200Hz->1600Hz arpeggio
+//   Attack hit:   200Hz, 100ms sawtooth
+//   Magic cast:   600->900->1200Hz sweep
+//   Tech special: 300->600->1200->1800Hz cascade
+//   Victory:      C5->E5->G5->C6 fanfare
+//   Game over:    400->350->300->200Hz descent
+//   Damage taken: 150Hz, 120ms sawtooth
