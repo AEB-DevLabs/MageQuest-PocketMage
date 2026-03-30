@@ -618,3 +618,24 @@ void einkHandler_APP() {
 //   Victory:      C5->E5->G5->C6 fanfare
 //   Game over:    400->350->300->200Hz descent
 //   Damage taken: 150Hz, 120ms sawtooth
+
+// ===================== v4: BITMAP ANIME PORTRAITS =====================
+// Portraits are 32x40 1-bit bitmaps stored as PROGMEM arrays
+// Each row is 4 bytes (32 bits), 40 rows = 160 bytes per portrait
+// Drawn with display.drawBitmap() during battle cut-ins
+//
+// Portrait design (anime style, 1-bit):
+//   - Large eyes ~10px wide with white highlight dots
+//   - Spiky/flowing hair framing the face
+//   - Pointed chin, small nose (single dot), small mouth
+//   - Arion: wizard hat, long flowing side hair, robe collar
+//   - Kael: short hair with headband, strong jaw, armor collar
+//
+// Cut-in overlay during attacks:
+//   - Full-width white box overlays battle scene
+//   - Portrait drawn at left (32x40)
+//   - Action name in large serif font
+//   - Speed lines (horizontal decreasing bars)
+//   - Auto-dismiss after ~750ms
+//
+// Canvas scaled 2x on mobile for pixel visibility
