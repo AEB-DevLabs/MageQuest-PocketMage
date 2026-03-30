@@ -1,3 +1,5 @@
+![MageQuest Icon](assets/icon.png)
+
 # MageQuest — A Crystal Prophecy
 
 A JRPG inspired by Chrono Trigger and Final Fantasy for the [PocketMage PDA](https://github.com/ashtf8/PocketMage_PDA).
